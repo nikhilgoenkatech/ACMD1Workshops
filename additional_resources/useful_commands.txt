@@ -1,0 +1,33 @@
+Please find below some useful commands that can be used during the workshop:
+
+1. To start the docker with sample application:
+   docker run -d --name SampleBankApp -p 4000:3000 nikhilgoenka/sample-bank-app
+   This would start the docker on port localhost:4000 with docker name as "SampleBankApp"
+   
+2. To start the jenkins docker:
+   docker run -d --network mynetwork --name Jenkins-Dynatrace -p 8020:8080  -v /var/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock nikhilgoenka/jenkins-dynatrace-workshop
+   -d runs the docker in daemon mode.
+   -p 8020:8080 - By default, jenkins docker would be running on 8080. Specifying -p 8020:8080 binds the 8080 in docker to localhost on 8020. So, you can forward/listen requests from
+                  docker using localhost:8020.
+3. -v Bind mounts a volume.
+    By default, jenkins docker is maintaining the pipeline/data information in /var/jenkins_home. Specifying "-v /var/jenkins:/var/jenkins_home" would mount the localhost:/var/jenkins
+    directory so that the pipeline data is not lost once pipeline is re-started.
+    Specifying '-v /var/run/docker.sock:/var/run/docker.sock' will allow the jekins docker to leverage the dockerd running on localhost. This would be required since we are starting the
+    sample-app dockers while running the pipeline.
+
+4. To run the ansible-tower docker:
+   docker run -d --name ansible-tower -p 8090:443 ybalt/ansible-tower
+   This would start the docker on port localhost:8090 with docker name as "ansible-tower"
+
+Other useful commands:
+1. To view the downloaded images on localhost: docker images
+2. To remove a particular image: docker rmi <IMAGE-NAME>
+3. To stop a docker: docker stop <CONTAINER-ID>
+4. To remove a docker: docker rm <CONTAINER-ID>
+5. To run a docker in interactive bash: docker run -it <CONTAINER> /bin/bash
+6. To delete all the unused images: docker system prune -a -f
+7. To pull a particular image: docker pull <docker-image>
+8. To run load test using JMETER, 
+   Run: jmeter -n -t [jmx file] -l [results file] -e -o [Path to web report folder]
+9. Jenkins pipeline:
+   Command: https://github.com/nikhilgoenkatech/JenkinsBankApp
