@@ -16,7 +16,7 @@ Run the script: Run it in an available machine (manually)
 
 Log in into your Ubuntu image
 
-Clone the repo and navigate to the directory git clone AIOPsWorkshop ; cd AIOPsWorkshop
+Clone the repo and navigate to the directory git clone nikhilgoenkatech/ACMD1Workshops ; cd ACMD1Workshops
 
 Execute the file with sudo rights. sudo bash -c './install-workshop-tech-stack.sh &'
 
