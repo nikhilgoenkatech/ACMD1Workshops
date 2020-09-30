@@ -75,12 +75,11 @@ dynatraceActiveGateInstall() {
 downloadApacheJmeter() {
   if [ "$download_Jmeter" = true ]; then
     printInfoSection "Installation of Apache JMeter"
-    wget -nv -q -O /home/ubuntu/apache-jmeter.tgz "https://apache.mirror.digitalpacific.com.au//jmeter/source/apache-jmeter-5.3_src.tgz"
+    bashas "sudo apt-get install openjdk-8-jre-headless"
+    wget -nv -q -O /home/ubuntu/apache-jmeter.zip "https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.2.1.zip"
     bashas "cd /home/ubuntu/"
-    bashas "gunzip /home/ubuntu/apache-jmeter.tgz" 
-    bashas "tar -xf /home/ubuntu/apache-jmeter.tar -C /home/ubuntu/" 
-    printInfo "Apache Jmeter has been downloaded at /home/ubuntu/apache-jmeter-5.3 directory."
-    rm /home/ubuntu/apache-jmeter.tar 
+    bashas "unzip /home/ubuntu/apache-jmeter.zip" 
+    printInfo "Apache Jmeter has been downloaded at /home/ubuntu/apache-jmeter-5.2.1 directory."
   fi
 }
 
