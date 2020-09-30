@@ -28,6 +28,11 @@ Other useful commands:
 6. To delete all the unused images: docker system prune -a -f
 7. To pull a particular image: docker pull <docker-image>
 8. To run load test using JMETER, 
-   Run: jmeter -n -t [jmx file] -l [results file] -e -o [Path to web report folder]
+   Run: jmeter -n -t [jmx file] -l [results file]
+        -n indicates nonGUI mode
+        -t JMX test plan that you plan to run
+        -l logfile where the execution would be logged.
 9. Jenkins pipeline:
    Command: https://github.com/nikhilgoenkatech/JenkinsBankApp
+10. Restart the docker:
+    Command: docker 
