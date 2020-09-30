@@ -78,6 +78,7 @@ downloadApacheJmeter() {
     bashas "sudo apt-get install openjdk-8-jre-headless"
     wget -nv -q -O /home/ubuntu/apache-jmeter.zip "https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.2.1.zip"
     bashas "cd /home/ubuntu/"
+    bashas "sudo apt-install unzip"
     bashas "unzip /home/ubuntu/apache-jmeter.zip" 
     printInfo "Apache Jmeter has been downloaded at /home/ubuntu/apache-jmeter-5.2.1 directory."
   fi
