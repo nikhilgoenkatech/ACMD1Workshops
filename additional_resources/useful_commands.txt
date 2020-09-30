@@ -32,6 +32,8 @@ Other useful commands:
         -n indicates nonGUI mode
         -t JMX test plan that you plan to run
         -l logfile where the execution would be logged.
+   To run the Test-Plan available in /home/ubuntu/ directory, execute the below command:
+   ./jmeter -n -t /home/ubuntu/ACMD1Workshops/additional_resources/app_docker/scripts/Smoke-test-Jmeter.jmx -l output.log
 9. Jenkins pipeline:
    Command: https://github.com/nikhilgoenkatech/JenkinsBankApp
 10. Restart the docker:
