@@ -29,6 +29,8 @@ BACKEND_FILE='install-prerequisites.sh'
 NEWUSER="student"
 NEWPWD="secr3t"
 
+FUNCTIONS_FILE_REPO="https://raw.githubusercontent.com/nikhilgoenkatech/ACMD1Workshops/master/install-prerequisites.sh"
+
 # ---- Define Dynatrace Environment ----
 # Sample: https://{your-domain}/e/{your-environment-id} for managed or https://{your-environment-id}.live.dynatrace.com for SaaS
 TENANT=""

@@ -1,3 +1,6 @@
+ACMD1WRKSHP_REPO="https://github.com/nikhilgoenkatech/ACMD1Workshops.git"
+ACMD1WRKSHP_DIR="~/ACMD1Workshop"
+
 dockerInstall() {
   if [ "$docker_install" = true ]; then
     printInfoSection "Installing Docker and J Query"
@@ -119,6 +122,12 @@ downloadStartAnsibleTower(){
     printInfo "Docker Ansible-tower is now running on port 8090"
   fi
 }
+resources_clone(){
+  if ["$clone_the_repo" = true]; then
+    printInfoSection "Clone ACMD1Workshop Resources in $ACMD1WRKSHP_DIR"
+    bashas "git clone $ACMD1WRKSHP_REPO $ACMD1WRKSHP_DIR"
+  fi
+}
 
 # ======================================================================
 #       -------- Function boolean flags ----------                     #
@@ -139,6 +148,7 @@ install_start_ansible_tower_docker=false
 installBankCustomerAIOpsWorkshop() {
   update_ubuntu=true
   setup_proaliases=true 
+  clone_the_repo=true
 
   docker_install=true
   dynatrace_install_oneagent=true
@@ -168,6 +178,7 @@ installSetup() {
   updateUbuntu
   setupProAliases
 
+  resources_clone
   dockerInstall
   dynatraceActiveGateInstall
 
