@@ -128,6 +128,23 @@ resources_clone(){
     bashas "sudo git clone $ACMD1WRKSHP_REPO $ACMD1WRKSHP_DIR"
   fi
 }
+createWorkshopUser() {
+  if [ "$create_workshop_user" = true ]; then
+    printInfoSection "Creating Workshop User from user($USER) into($NEWUSER)"
+    homedirectory=$(eval echo ~$USER)
+    printInfo "copy home directories and configurations"
+    cp -R $homedirectory /home/$NEWUSER
+    printInfo "Create user"
+    useradd -s /bin/bash -d /home/$NEWUSER -m -G sudo -p $(openssl passwd -1 $NEWPWD) $NEWUSER
+    printInfo "Change diretores rights -r"
+    chown -R $NEWUSER:$NEWUSER /home/$NEWUSER
+    usermod -a -G docker $NEWUSER
+    usermod -a -G microk8s $NEWUSER
+    printInfo "Warning: allowing SSH passwordAuthentication into the sshd_config"
+    sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+    service sshd restart
+  fi
+}
 
 # ======================================================================
 #       -------- Function boolean flags ----------                     #
@@ -145,10 +162,11 @@ download_JmeterScripts=false
 install_start_bank_docker=false
 download_jenkins_image=false
 install_start_ansible_tower_docker=false
+create_workshop_user=false
 
 installBankCustomerAIOpsWorkshop() {
   update_ubuntu=true
-  setup_proaliases=true 
+  setup_proaliases=true
   clone_the_repo=true
 
   docker_install=true
@@ -160,6 +178,7 @@ installBankCustomerAIOpsWorkshop() {
   download_jenkins_image=true
 
   install_start_ansible_tower_docker=true
+  create_workshop_user=true
 }
 
 # ======================================================================
@@ -177,6 +196,7 @@ installSetup() {
 
   updateUbuntu
   setupProAliases
+  createWorkshopUser
   
   resources_clone
   dockerInstall
