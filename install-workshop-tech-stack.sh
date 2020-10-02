@@ -58,7 +58,7 @@ if [ -f "$BACKEND_FILE" ]; then
     echo "The functions file $BACKEND_FILE exists locally, loading functions from it. (dev)"
 else
     echo "The functions file $BACKEND_FILE does not exist, getting it from github."
-    curl -o functions.sh $FUNCTIONS_FILE_REPO
+    curl -o install-prerequisites.sh $FUNCTIONS_FILE_REPO
 fi
 
 # Comfortable function for setting the sudo user.
