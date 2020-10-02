@@ -123,7 +123,7 @@ downloadStartAnsibleTower(){
   fi
 }
 resources_clone(){
-  if ["$clone_the_repo" = true ]; then
+  if [ "$clone_the_repo" = true ]; then
     printInfoSection "Clone ACMD1Workshop Resources in $ACMD1WRKSHP_DIR"
     bashas "sudo git clone $ACMD1WRKSHP_REPO $ACMD1WRKSHP_DIR"
   fi
@@ -137,6 +137,7 @@ resources_clone(){
 # If you add varibles here, dont forget the function definition and the priting in printFlags function.
 verbose_mode=false
 update_ubuntu=false
+clone_the_repo=false
 docker_install=false
 setup_proaliases=false
 download_Jmeter=false
