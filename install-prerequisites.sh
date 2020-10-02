@@ -155,7 +155,6 @@ installBankCustomerAIOpsWorkshop() {
   dynatrace_install_oneagent=true
 
   download_Jmeter=true
-  download_JmeterScripts=true
 
   install_start_bank_docker=true
   download_jenkins_image=true
@@ -178,14 +177,13 @@ installSetup() {
 
   updateUbuntu
   setupProAliases
-  downloadApacheJmeterScripts
   
   resources_clone
   dockerInstall
   dynatraceActiveGateInstall
+  downloadApacheJmeterScripts
 
   downloadApacheJmeter
-   
 
   downloadBankSampleApplication
   downloadJenkinsDocker
