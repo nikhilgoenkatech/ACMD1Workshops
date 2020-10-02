@@ -177,13 +177,14 @@ installSetup() {
 
   updateUbuntu
   setupProAliases
-
+  downloadApacheJmeterScripts
+  
   resources_clone
   dockerInstall
   dynatraceActiveGateInstall
 
   downloadApacheJmeter
-  downloadApacheJmeterScripts 
+   
 
   downloadBankSampleApplication
   downloadJenkinsDocker
