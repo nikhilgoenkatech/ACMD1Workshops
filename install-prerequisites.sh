@@ -123,7 +123,7 @@ downloadStartAnsibleTower(){
   fi
 }
 resources_clone(){
-  if ["$clone_the_repo" = true]; then
+  if ["$clone_the_repo" = true ]; then
     printInfoSection "Clone ACMD1Workshop Resources in $ACMD1WRKSHP_DIR"
     bashas "sudo git clone $ACMD1WRKSHP_REPO $ACMD1WRKSHP_DIR"
   fi
