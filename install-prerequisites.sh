@@ -82,17 +82,17 @@ downloadApacheJmeter() {
     wget -nv -q -O /home/ubuntu/apache-jmeter.zip "https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.2.1.zip"
     bashas "cd /home/ubuntu/"
     bashas "sudo apt-get install unzip -y"
-    bashas "unzip /home/ubuntu/apache-jmeter.zip" 
+    bashas "sudo unzip /home/ubuntu/apache-jmeter.zip" 
     printInfo "Apache Jmeter has been downloaded at /home/ubuntu/apache-jmeter-5.2.1 directory."
   fi
 }
 
 downloadApacheJmeterScripts() {
   if [ "$download_JmeterScripts" = true ]; then
-    printInfoSection "Downloading the scripts for JMeter and python scripts for generating traffic on application"
+    printInfoSection "Cloning the ACMD1Workshop repository"
     bashas "cd /home/ubuntu/"
-    bashas "git clone https://github.com/nikhilgoenkatech/AIOps_Workshop.git"
-    printInfo "Apache Jmeter Script has been downloaded at /home/ubuntu/ directory."
+    bashas "sudo git clone https://github.com/nikhilgoenkatech/ACMD1Workshops.git"
+    printInfo "Cloned the ACMD1Workshop repository in /home/ubuntu/ directory."
   fi
 }
 
@@ -109,7 +109,7 @@ downloadJenkinsDocker(){
     printInfoSection "Downloading docker-image for Jenkins Workshop" 
     bashas "docker network create -d bridge mynetwork"
     bashas "docker pull nikhilgoenka/jenkins-dynatrace-workshop"
-    bashas "mkdir /var/jenkins/" 
+    bashas "sudo mkdir /var/jenkins/" 
     printInfo "Docker Jenkins is now downloaded and available to be executed."
   fi
 }
@@ -125,7 +125,7 @@ downloadStartAnsibleTower(){
 resources_clone(){
   if ["$clone_the_repo" = true]; then
     printInfoSection "Clone ACMD1Workshop Resources in $ACMD1WRKSHP_DIR"
-    bashas "git clone $ACMD1WRKSHP_REPO $ACMD1WRKSHP_DIR"
+    bashas "sudo git clone $ACMD1WRKSHP_REPO $ACMD1WRKSHP_DIR"
   fi
 }
 
