@@ -118,8 +118,7 @@ downloadStartAnsibleTower(){
   if [ "$install_start_ansible_tower_docker" = true ]; then
     printInfoSection "Downloading docker-image for ansible tower"
     bashas "docker pull ybalt/ansible-tower"
-    bashas "docker run -d --name ansible-tower -p 8090:443 ybalt/ansible-tower"
-    printInfo "Docker Ansible-tower is now running on port 8090"
+    printInfo "Docker Ansible-tower image is now downloaded"
   fi
 }
 resources_clone(){
