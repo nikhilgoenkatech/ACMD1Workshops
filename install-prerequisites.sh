@@ -82,7 +82,7 @@ downloadApacheJmeter() {
     wget -nv -q -O /home/ubuntu/apache-jmeter.zip "https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.2.1.zip"
     bashas "cd /home/ubuntu/"
     bashas "sudo apt-get install unzip -y"
-    bashas "sudo unzip /home/ubuntu/apache-jmeter.zip" 
+    bashas "sudo unzip /home/ubuntu/apache-jmeter.zip -d /home/ubuntu/apache-jmeter-5.2.1" 
     printInfo "Apache Jmeter has been downloaded at /home/ubuntu/apache-jmeter-5.2.1 directory."
   fi
 }
