@@ -26,8 +26,8 @@ BACKEND_FILE='install-prerequisites.sh'
 
 # ---- Workshop User  ----
 # The flag 'create_workshop_user'=true is per default set to false. If it's set to to it'll clone the home directory from USER and allow SSH login with the given text password )
-NEWUSER="student"
-NEWPWD="secr3t"
+NEWUSER="d1pacmworkshop"
+NEWPWD="dynatrace"
 
 FUNCTIONS_FILE_REPO="https://raw.githubusercontent.com/nikhilgoenkatech/ACMD1Workshops/master/install-prerequisites.sh"
 
