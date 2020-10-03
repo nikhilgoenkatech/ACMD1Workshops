@@ -87,7 +87,7 @@ def push_event(logger, eventmsg, job_name):
 ######################################################################################
 if __name__=="__main__":
    #Configure port on which your application is reachable
-   port = "3000"
+   port = "4000"
 
    #Configure the number of requests you want to execute on your endpoint
    no_of_requests = "100"
@@ -99,7 +99,7 @@ if __name__=="__main__":
    log_file = "Test-case-1.2.log"
 
    #test_hostname would your application hosted
-   test_hostname = "3.136.86.217"
+   test_hostname = "localhost"
 
    #Initialize the loggin module in python
    logging.basicConfig(filename=log_file,
@@ -110,13 +110,13 @@ if __name__=="__main__":
    logger = logging.getLogger()
 
    #Inform dynatrace the next set of requests are part of this load-test
-   eventdetail = "STARTING LOADTEST"
-   push_event(logger, eventdetail, job_name)
+   #eventdetail = "STARTING LOADTEST"
+   #push_event(logger, eventdetail, job_name)
    #Generate the load
    load_test(port, no_of_requests, logger, test_hostname)
 
    #Inform dynatrace about completion of load-test
-   eventdetail = "STOPPING LOADTEST"
-   push_event(logger, eventdetail, job_name)
+   #eventdetail = "STOPPING LOADTEST"
+   #push_event(logger, eventdetail, job_name)
 
    logging.shutdown()
