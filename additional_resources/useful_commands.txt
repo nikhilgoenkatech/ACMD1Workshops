@@ -37,4 +37,8 @@ Other useful commands:
 9. Jenkins pipeline:
    Command: https://github.com/nikhilgoenkatech/JenkinsBankApp
 10. Restart the docker:
-    Command: docker 
+    Command: docker restart <conatiner-id>
+11. Stop a docker:
+    Command: docker stop <container-name>
+12. To view all the docker in your environment:
+    Command: docker ps -a
