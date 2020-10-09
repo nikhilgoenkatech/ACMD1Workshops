@@ -1,6 +1,6 @@
 DISCLAIMER: This project was developed for internal workshop purposes only and is not supported. It's publishment is only intended for helping others automate environments for delivering workshops with Dynatrace.
 
-Inspired/Borrowed from similar package by Sergio Hinojosa.
+Inspired/Borrowed from similar package by Sergio.
 
 AIOpsWorkshop
 The script to install all the pre-requisites in order to run a hands-on session for AIOps.
