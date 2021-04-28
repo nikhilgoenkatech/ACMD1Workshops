@@ -117,7 +117,10 @@ downloadJenkinsDocker(){
 downloadStartAnsibleTower(){
   if [ "$install_start_ansible_tower_docker" = true ]; then
     printInfoSection "Downloading docker-image for ansible tower"
-    bashas "docker pull ybalt/ansible-tower"
+    bashas "apt-get install python"
+    bashas "apt-get install python-pip"
+    bashas "pip install docker"
+    bashas "docker pull nikhilgoenka/ansibletower"
     printInfo "Docker Ansible-tower image is now downloaded"
   fi
 }
