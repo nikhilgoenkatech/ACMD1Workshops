@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: samplebank
+ namespace: model-app
+ annotations:
+   service.beta.kubernetes.io/do-loadbalancer-protocol: "http"
+spec:
+ selector:
+   run: internet-bank
+ ports:
+   - protocol: TCP
+     port: 3000
+     targetPort: 3000
+     name: http
+ type: NodePort
+ #type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: samplebank
+ namespace: model-app
+spec:
+ selector:
+   matchLabels:
+     run: internet-bank
+ template:
+   metadata:
+     labels:
+       run: internet-bank
+       app.kubernetes.io/version: "1.1"
+   spec:
+     containers:
+     - name: frontend
+       image: nikhilgoenka/samplebank-nginx:ansible2
+       imagePullPolicy: Always
+       ports:
+       - containerPort: 3000
+         protocol: TCP
