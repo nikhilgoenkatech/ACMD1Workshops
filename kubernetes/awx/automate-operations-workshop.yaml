@@ -4,5 +4,5 @@ kind: AWX
 metadata:
   name: awx-demo
 spec:
-  service_type: nodeport
+  service_type: NodePort
   nodeport_port: 30002
