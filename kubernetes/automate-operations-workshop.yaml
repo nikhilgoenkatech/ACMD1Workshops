@@ -2,8 +2,7 @@
 apiVersion: awx.ansible.com/v1beta1
 kind: AWX
 metadata:
-  name: automate-operations
+  name: awx-demo
 spec:
   service_type: nodeport
   ingress_type: none
-  nodePort: 30020
