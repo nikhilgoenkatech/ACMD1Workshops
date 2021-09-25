@@ -3,7 +3,10 @@ apiVersion: awx.ansible.com/v1beta1
 kind: AWX
 metadata:
   name: awx-demo
+annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   service_type: nodeport
   ingress_type: ingress
   ingress_path: /ansible
+
