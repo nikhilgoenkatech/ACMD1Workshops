@@ -5,3 +5,4 @@ metadata:
   name: awx-demo
 spec:
   service_type: nodeport
+  ingress_path: /ansible
