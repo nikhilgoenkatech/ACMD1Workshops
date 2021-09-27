@@ -5,8 +5,8 @@ metadata:
   labels:
     app.kubernetes.io/component: awx
     app.kubernetes.io/managed-by: awx-operator
-    app.kubernetes.io/name: awx
-    app.kubernetes.io/part-of: awx
+    app.kubernetes.io/name: awx-demo
+    app.kubernetes.io/part-of: awx-demo
   name: awx-service-custom
   namespace: awx
 spec:
@@ -19,6 +19,6 @@ spec:
   selector:
     app.kubernetes.io/component: awx
     app.kubernetes.io/managed-by: awx-operator
-    app.kubernetes.io/name: awx
+    app.kubernetes.io/name: awx-demo
   sessionAffinity: None
   type: NodePort
