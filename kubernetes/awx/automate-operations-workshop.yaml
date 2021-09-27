@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/name: awx
     app.kubernetes.io/part-of: awx
   name: awx-service-custom
-  namespace: default
+  namespace: awx
 spec:
   ports:
     - name: http
