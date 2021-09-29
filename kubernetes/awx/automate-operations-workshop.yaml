@@ -1,24 +1,8 @@
 ---
-apiVersion: v1
-kind: Service
+apiVersion: awx.ansible.com/v1beta1
+kind: AWX
 metadata:
-  labels:
-    app.kubernetes.io/component: awx
-    app.kubernetes.io/managed-by: awx-operator
-    app.kubernetes.io/name: awx-demo
-    app.kubernetes.io/part-of: awx-demo
-  name: awx-service-custom
-  namespace: awx
+  name: awx-demo
 spec:
-  ports:
-    - name: http
-      nodePort: 32100
-      port: 80
-      protocol: TCP
-      targetPort: 8052
-  selector:
-    app.kubernetes.io/component: awx
-    app.kubernetes.io/managed-by: awx-operator
-    app.kubernetes.io/name: awx-demo
-  sessionAffinity: None
-  type: NodePort
+  service_type: nodeport
+  ingress_type: none
