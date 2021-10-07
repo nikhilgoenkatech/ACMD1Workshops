@@ -121,6 +121,7 @@ downloadStartAnsibleTower(){
     bashas "apt-get install python-pip"
     bashas "pip install docker"
     bashas "docker pull nikhilgoenka/ansibletower"
+    bashas "sudo usermod -aG docker d1pacmworkshop"
     printInfo "Docker Ansible-tower image is now downloaded"
   fi
 }
