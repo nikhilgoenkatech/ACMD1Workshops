@@ -1,6 +1,9 @@
 ACMD1WRKSHP_REPO="https://github.com/nikhilgoenkatech/ACMD1Workshops.git"
 ACMD1WRKSHP_DIR="~/ACMD1Workshop"
 
+AWX_REPO="https://github.com/nikhilgoenkatech/awx.git"
+AWX_DIR="~/.awx"
+
 dockerInstall() {
   if [ "$docker_install" = true ]; then
     printInfoSection "Installing Docker and J Query"
@@ -120,7 +123,16 @@ downloadStartAnsibleTower(){
     bashas "apt-get install python"
     bashas "apt-get install python-pip -y"
     bashas "pip install docker"
-    bashas "docker pull nikhilgoenka/ansibletower"
+    bashas "docker pull nikhilgoenka/awx-task"
+    bashas "docker pull nikhilgoenka/awx-web"
+    bashas "docker pull nikhilgoenka/postgres"
+    bashas "docker pull nikhilgoenka/redis"
+    printInfo "Downloading Compose repo"
+    bashas "sudo curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose"
+    printInfo "Assigning execution permissions to docker-compose"
+    bashas "sudo chmod +x /usr/local/bin/docker-compose"
+    printInfo "Creating a soft link to the docker-compose binary"
+    bashas "sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose"
     printInfo "Docker Ansible-tower image is now downloaded"
   fi
 }
