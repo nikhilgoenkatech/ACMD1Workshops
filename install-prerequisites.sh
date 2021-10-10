@@ -2,7 +2,7 @@ ACMD1WRKSHP_REPO="https://github.com/nikhilgoenkatech/ACMD1Workshops.git"
 ACMD1WRKSHP_DIR="~/ACMD1Workshop"
 
 AWX_REPO="https://github.com/nikhilgoenkatech/awx.git"
-AWX_DIR="~/.awx"
+AWX_DIR="~/awx"
 
 dockerInstall() {
   if [ "$docker_install" = true ]; then
