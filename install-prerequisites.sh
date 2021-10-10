@@ -140,6 +140,9 @@ resources_clone(){
   if [ "$clone_the_repo" = true ]; then
     printInfoSection "Clone ACMD1Workshop Resources in $ACMD1WRKSHP_DIR"
     bashas "sudo git clone $ACMD1WRKSHP_REPO $ACMD1WRKSHP_DIR"
+    
+    printInfoSection "Clone AWX Resources in $AWX_REPO"
+    bashas "sudo git clone $AWX_REPO $AWX_DIR"
   fi
 }
 createWorkshopUser() {
