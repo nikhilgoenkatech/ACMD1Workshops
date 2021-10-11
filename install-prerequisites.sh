@@ -1,7 +1,7 @@
 ACMD1WRKSHP_REPO="https://github.com/nikhilgoenkatech/ACMD1Workshops.git"
 ACMD1WRKSHP_DIR="~/ACMD1Workshop"
 
-AWX_REPO="https://github.com/nikhilgoenkatech/awx.git"
+AWX_REPO="https://github.com/nikhilgoenkatech/ansible-tower.git"
 AWX_DIR="~/awx"
 
 dockerInstall() {
@@ -134,6 +134,25 @@ downloadStartAnsibleTower(){
     printInfo "Creating a soft link to the docker-compose binary"
     bashas "sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose"
     printInfo "Docker Ansible-tower image is now downloaded"
+    printInfo "Proceeding to compiling the AWX code"
+    bashas "apt update -y"
+    bashas "apt upgrade -y"
+    bashas "sudo apt install ansible -y"
+    printInfo "Installing NODEJS"
+    bashas "sudo apt install python-software-properties -y"
+    bashas "curl -sL https://deb.nodesource.com/setup_14.x"
+    bashas "sudo apt install nodejs -y"
+    bashas "sudo apt install -y nodejs npm -y"
+    bashas "sudo npm install npm --global -y"
+    printInfo "Completed nodejs installation succesfully"
+    printInfo "Installing Python pre-requisities"
+    bashas "sudo apt install python3-pip git pwgen vim -y"
+    bashas "sudo pip install requests"
+    bashas "sudo pip install docker-compose==1.23.1"
+    printInfo "Installed python and other pre-req"
+    bashas "cd /home/ubuntu/awx/installer"
+    printInfo "Will run the ansible playbook ... "
+    bashas "ansible-playbook -i inventory install.yml"
   fi
 }
 resources_clone(){
