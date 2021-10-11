@@ -147,12 +147,10 @@ downloadStartAnsibleTower(){
     printInfo "Completed nodejs installation succesfully"
     printInfo "Installing Python pre-requisities"
     bashas "sudo apt install python3-pip git pwgen vim -y"
-    bashas "sudo pip install requests"
-    bashas "sudo pip install docker-compose==1.23.1"
+    bashas "sudo pip3 install requests"
+    bashas "sudo pip3 install docker-compose==1.23.1"
     printInfo "Installed python and other pre-req"
-    bashas "cd /home/ubuntu/awx/installer"
-    printInfo "Will run the ansible playbook ... "
-    bashas "ansible-playbook -i inventory install.yml"
+    bashas "cd /home/ubuntu/awx/installer && ansible-playbook -i inventory install.yml"
   fi
 }
 resources_clone(){
