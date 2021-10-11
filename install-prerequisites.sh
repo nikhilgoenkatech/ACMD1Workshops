@@ -140,7 +140,7 @@ downloadStartAnsibleTower(){
     bashas "sudo apt install ansible -y"
     printInfo "Installing NODEJS"
     bashas "sudo apt install software-properties-common -y"
-    bashas "curl -sL https://deb.nodesource.com/setup_14.x"
+    bashas "curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash"
     bashas "sudo apt install nodejs -y"
     bashas "sudo apt install -y nodejs npm -y"
     bashas "sudo npm install npm --global -y"
