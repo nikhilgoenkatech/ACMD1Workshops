@@ -90,7 +90,7 @@ if [[ $repo_name != "" ]]
 then
 sudo rm -rf  /tmp/ansible-$repo_name
 cd /tmp
-sudo git clone https://github.com/nikhilgoenkatech/ansible-awx.git
+sudo git clone https://github.com/nikhilgoenkatech/ansible-linux.git
 cd /tmp/ansible-$repo_name
 ansible-galaxy install -r requirements.yml -f
 sudo touch  /tmp/ansible-$repo_name/hosts
