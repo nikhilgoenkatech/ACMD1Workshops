@@ -134,7 +134,7 @@ downloadStartAnsibleTower(){
     printInfo "Docker Ansible-tower image is now downloaded"
     printInfo "Proceeding to compiling the AWX code"
     bashas "apt update"
-    bashas "apt upgrade"
+    bashas "apt upgrade -y"
     bashas "sudo apt install ansible -y"
     printInfo "Installing NODEJS"
     bashas "sudo apt install software-properties-common -y"
