@@ -1,8 +1,8 @@
 ACMD1WRKSHP_REPO="https://github.com/nikhilgoenkatech/ACMD1Workshops.git"
 ACMD1WRKSHP_DIR="~/ACMD1Workshop"
 
-AWX_REPO="https://github.com/nikhilgoenkatech/ansible-tower.git"
-AWX_DIR="~/awx"
+#AWX_REPO="https://github.com/nikhilgoenkatech/ansible-tower.git"
+#AWX_DIR="~/awx"
 
 dockerInstall() {
   if [ "$docker_install" = true ]; then
@@ -134,6 +134,7 @@ downloadStartAnsibleTower(){
     printInfo "Creating a soft link to the docker-compose binary"
     bashas "sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose"
     bashas "sudo wget -N https://raw.githubusercontent.com/Websoft9/ansible-linux/main/scripts/install.sh && sudo ./install.sh -r linux"
+    #the compilation of source code is not working, so using one of the scripts to auto-populate the AWX dockers
     #printInfo "Docker Ansible-tower image is now downloaded"
     #printInfo "Proceeding to compiling the AWX code"
     #bashas "apt update -y"
