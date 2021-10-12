@@ -142,7 +142,7 @@ downloadStartAnsibleTower(){
     bashas "sudo apt install software-properties-common -y"
     bashas "curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash"
     bashas "sudo apt install nodejs -y"
-    bashas "sudo apt install -y nodejs npm -y"
+    bashas "sudo apt install -y nodejs npm"
     bashas "sudo npm install npm --global -y"
     printInfo "Completed nodejs installation succesfully"
     printInfo "Installing Python pre-requisities"
