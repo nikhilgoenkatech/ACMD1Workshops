@@ -129,7 +129,7 @@ downloadStartAnsibleTower(){
     bashas "sudo chmod +x /usr/local/bin/docker-compose"
     printInfo "Creating a soft link to the docker-compose binary"
     bashas "sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose"
-    bashas "cd /home/ubuntu/ACMD1Workshop/ && sudo bash install.sh -r linux"
+    #bashas "cd /home/ubuntu/ACMD1Workshop/ && sudo bash install.sh -r linux"
     #the compilation of source code is not working, so using one of the scripts to auto-populate the AWX dockers
     printInfo "Docker Ansible-tower image is now downloaded"
     printInfo "Proceeding to compiling the AWX code"
