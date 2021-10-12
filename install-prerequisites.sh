@@ -133,8 +133,8 @@ downloadStartAnsibleTower(){
     #the compilation of source code is not working, so using one of the scripts to auto-populate the AWX dockers
     printInfo "Docker Ansible-tower image is now downloaded"
     printInfo "Proceeding to compiling the AWX code"
-    bashas "apt update -y"
-    bashas "apt upgrade -y"
+    bashas "apt update"
+    bashas "apt upgrade"
     bashas "sudo apt install ansible -y"
     printInfo "Installing NODEJS"
     bashas "sudo apt install software-properties-common -y"
