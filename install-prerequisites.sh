@@ -148,7 +148,7 @@ downloadStartAnsibleTower(){
     bashas "sudo pip3 install docker-compose==1.23.1"
     printInfo "Installed python and other pre-req"
     bashas "cd /home/ubuntu/awx/installer && sudo ansible-playbook -i inventory install.yml"
-    bashas "cp ~/.awx/awxcompose/docker-compose.yml /home/ubuntu/ACMD1Workshop/additional_resources/ansible-tower/"
+    bashas "sudo cp ~/.awx/awxcompose/docker-compose.yml /home/ubuntu/ACMD1Workshop/additional_resources/ansible-tower/"
   fi
 }
 resources_clone(){
