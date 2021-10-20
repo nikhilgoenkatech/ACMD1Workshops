@@ -116,17 +116,6 @@ microk8sInstall() {
     homedirectory=$(eval echo ~$USER)
     bashas "mkdir $homedirectory/.kube"
     bashas "microk8s.config > $homedirectory/.kube/config"
-
-    printInfo "Enable dns for the services to be able to communicate internally"
-    bashas "microk8s enable dns"
-    printInfo "Build docker image from the docker file"
-    bashas "sudo docker build -t app -f /home/ubuntu/k8s/Dockerfile ."
-
-    printInfo "Save docker image to a tar archive"
-    bashas "docker save app > app.tar"
-
-    printInfo "Import image to MicroK8s"
-    bashas "microk8s ctr image import app.tar"
   fi
 }
 
