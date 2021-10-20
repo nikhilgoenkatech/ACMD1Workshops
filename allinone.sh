@@ -279,7 +279,8 @@ downloadBankSampleApplication(){
   if [ "$install_start_bank_docker" = true ]; then
     printInfoSection "Downloading docker-image for sample bank application"
     bashas "docker pull nikhilgoenka/sample-bank-app"
-    bashas "docker run -d --name SampleBankApp -p 4000:3000 nikhilgoenka/sample-bank-app"
+    #Don't start the docker as Automate Operations need it to be manually started
+#    bashas "docker run -d --name SampleBankApp -p 4000:3000 nikhilgoenka/sample-bank-app"
     printInfo "Docker SampleBankApp is running on port 4000"
   fi
 }
@@ -295,10 +296,12 @@ downloadJenkinsDocker(){
 
 downloadStartAnsibleTower(){
   if [ "$install_start_ansible_tower_docker" = true ]; then
-    printInfoSection "Downloading docker-image for ansible tower"
+    printInfoSection "Downloading docker-image for ansible tower"    
     bashas "apt-get install python"
     bashas "apt-get install python-pip -y"
     bashas "pip install docker"
+    bashas "sudo pip install docker-py"
+    bashas "sudo apt install python-docker -y"
     printInfo "Downloading Compose repo"
     bashas "sudo curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose"
     printInfo "Assigning execution permissions to docker-compose"
