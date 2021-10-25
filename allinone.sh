@@ -352,6 +352,8 @@ createWorkshopUser() {
     usermod -a -G microk8s $NEWUSER
     printInfo "Warning: allowing SSH passwordAuthentication into the sshd_config"
     sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+    sed -i 's/#ClientAliveInterval 0/ClientAliveInterval 20/g' /etc/ssh/sshd_config
+    sed -i 's/#ClientAliveCountMax 0/ClientAliveCountMax 3/g' /etc/ssh/sshd_config
     service sshd restart
   fi
 }
