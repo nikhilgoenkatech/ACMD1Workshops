@@ -8,7 +8,7 @@ AWX_DIR="~/awx"
 
 KIAB_RELEASE="release-0.7.3"
 ISTIO_VERSION=1.5.1
-MICROK8S_CHANNEL="1.18/stable"
+MICROK8S_CHANNEL="1.21/stable"
 PROMETHEUS_K8S="~/k8s"
 PROMETHEUS_K8S_REPO="https://github.com/nikhilgoenkatech/k8prometheus.git"
 RETAIL_APP_DIR="~/e-commerce"
